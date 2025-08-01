@@ -1,0 +1,190 @@
+Microsoft Windows [versão 10.0.22621.5189]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\48720013892>mkdir projeto_responsivo
+Já existe uma subpasta ou um arquivo projeto_responsivo.
+
+C:\Users\48720013892>cd projeto_responsivo
+
+C:\Users\48720013892\projeto_responsivo>mkdir public
+
+C:\Users\48720013892\projeto_responsivo>mkdir src
+
+C:\Users\48720013892\projeto_responsivo>mkdir docs
+
+C:\Users\48720013892\projeto_responsivo>cd public
+
+C:\Users\48720013892\projeto_responsivo\public>MKDIR HTML
+
+C:\Users\48720013892\projeto_responsivo\public>mkdir css
+
+C:\Users\48720013892\projeto_responsivo\public>mkdir js
+
+C:\Users\48720013892\projeto_responsivo\public>mkdir media
+
+C:\Users\48720013892\projeto_responsivo\public>cd media
+
+C:\Users\48720013892\projeto_responsivo\public\media>cd ..
+
+C:\Users\48720013892\projeto_responsivo\public>cd HTML
+
+C:\Users\48720013892\projeto_responsivo\public\HTML>echo home.html > projeto responsivo
+
+C:\Users\48720013892\projeto_responsivo\public\HTML>cd ..
+
+C:\Users\48720013892\projeto_responsivo\public>cd css
+
+C:\Users\48720013892\projeto_responsivo\public\css>echo theme.css > body { margin: 0; padding: 0; background-color: lightgray;}
+
+C:\Users\48720013892\projeto_responsivo\public\css>cd ..
+
+C:\Users\48720013892\projeto_responsivo\public>cd media
+
+C:\Users\48720013892\projeto_responsivo\public\media>mkdir imagens
+
+C:\Users\48720013892\projeto_responsivo\public\media>mkdir fontes
+
+C:\Users\48720013892\projeto_responsivo\public\media>cd ..
+
+C:\Users\48720013892\projeto_responsivo\public>cd projeto_responsivo
+O sistema não pode encontrar o caminho especificado.
+
+C:\Users\48720013892\projeto_responsivo\public>cd ..
+
+C:\Users\48720013892\projeto_responsivo>cd docs
+
+C:\Users\48720013892\projeto_responsivo\docs>copy theme.css
+O sistema não pode encontrar o arquivo especificado.
+
+C:\Users\48720013892\projeto_responsivo\docs>copy C:\Usersz48720013892/projeto_responsivo/public/css/theme.css C:\Users\48720013892\projeto_responsivo\docs>copy C:\Usersz48720013892/projeto_responsivo/docs
+
+C:\Users\48720013892\projeto_responsivo\docs>cd ..
+
+C:\Users\48720013892\projeto_responsivo>cd public
+
+C:\Users\48720013892\projeto_responsivo\public>cd js
+
+C:\Users\48720013892\projeto_responsivo\public\js>echo responsivo.js > console.log("site responsivo pronto!")
+
+C:\Users\48720013892\projeto_responsivo\public\js>echo utils.js > console.log("utilitários carregados!")
+
+C:\Users\48720013892\projeto_responsivo\public\js>rename utils.js helpers.js
+O sistema não pode encontrar o arquivo especificado.
+
+C:\Users\48720013892\projeto_responsivo\public\js>rename utils.js > helpers.js
+A sintaxe do comando está incorreta.
+
+C:\Users\48720013892\projeto_responsivo\public\js>rename utils.js helpers.js
+O sistema não pode encontrar o arquivo especificado.
+
+C:\Users\48720013892\projeto_responsivo\public\js>dir
+ O volume na unidade C é Windows
+ O Número de Série do Volume é AA1A-C33B
+
+ Pasta de C:\Users\48720013892\projeto_responsivo\public\js
+
+25/07/2025  20:40    <DIR>          .
+25/07/2025  20:27    <DIR>          ..
+25/07/2025  20:39                16 console.log(site responsivo pronto!)
+25/07/2025  20:39                11 console.log(utilitários carregados!)
+25/07/2025  20:40                 0 helpers.js
+               3 arquivo(s)             27 bytes
+               2 pasta(s)   128.970.608.640 bytes disponíveis
+
+C:\Users\48720013892\projeto_responsivo\public\js>tree
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é AA1A-C33B
+C:.
+Não existem subpastas
+
+
+C:\Users\48720013892\projeto_responsivo\public\js>cd ..
+
+C:\Users\48720013892\projeto_responsivo\public>dir
+ O volume na unidade C é Windows
+ O Número de Série do Volume é AA1A-C33B
+
+ Pasta de C:\Users\48720013892\projeto_responsivo\public
+
+25/07/2025  20:27    <DIR>          .
+25/07/2025  20:26    <DIR>          ..
+25/07/2025  20:29    <DIR>          css
+25/07/2025  20:28    <DIR>          HTML
+25/07/2025  20:40    <DIR>          js
+25/07/2025  20:30    <DIR>          media
+               0 arquivo(s)              0 bytes
+               6 pasta(s)   128.967.806.976 bytes disponíveis
+
+C:\Users\48720013892\projeto_responsivo\public>tree
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é AA1A-C33B
+C:.
+├───css
+├───HTML
+├───js
+└───media
+    ├───fontes
+    └───imagens
+
+C:\Users\48720013892\projeto_responsivo\public>cd docs
+O sistema não pode encontrar o caminho especificado.
+
+C:\Users\48720013892\projeto_responsivo\public>cd ..
+
+C:\Users\48720013892\projeto_responsivo>cd docs
+
+C:\Users\48720013892\projeto_responsivo\docs>del theme.css
+Não foi possível encontrar C:\Users\48720013892\projeto_responsivo\docs\theme.css
+
+C:\Users\48720013892\projeto_responsivo\docs>del copy
+
+C:\Users\48720013892\projeto_responsivo\docs>cd HTML
+O sistema não pode encontrar o caminho especificado.
+
+C:\Users\48720013892\projeto_responsivo\docs>CD PUBLIC
+O sistema não pode encontrar o caminho especificado.
+
+C:\Users\48720013892\projeto_responsivo\docs>cd ..
+
+C:\Users\48720013892\projeto_responsivo>cd public
+
+C:\Users\48720013892\projeto_responsivo\public>cd HTML
+
+C:\Users\48720013892\projeto_responsivo\public\HTML>tree
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é AA1A-C33B
+C:.
+Não existem subpastas
+
+
+C:\Users\48720013892\projeto_responsivo\public\HTML>cd ..
+
+C:\Users\48720013892\projeto_responsivo\public>tree
+Listagem de caminhos de pasta para o volume Windows
+O número de série do volume é AA1A-C33B
+C:.
+├───css
+├───HTML
+├───js
+└───media
+    ├───fontes
+    └───imagens
+
+C:\Users\48720013892\projeto_responsivo\public>cd HTML
+
+C:\Users\48720013892\projeto_responsivo\public\HTML>dir
+ O volume na unidade C é Windows
+ O Número de Série do Volume é AA1A-C33B
+
+ Pasta de C:\Users\48720013892\projeto_responsivo\public\HTML
+
+25/07/2025  20:28    <DIR>          .
+25/07/2025  20:27    <DIR>          ..
+25/07/2025  20:28                23 projeto
+               1 arquivo(s)             23 bytes
+               2 pasta(s)   128.962.904.064 bytes disponíveis
+
+C:\Users\48720013892\projeto_responsivo\public\HTML>rename projeto home.html
+
+C:\Users\48720013892\projeto_responsivo\public\HTML>
+
