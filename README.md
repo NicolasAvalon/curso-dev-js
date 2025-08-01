@@ -1,0 +1,1 @@
+Markdown é uma linguagem de marcação simples e leve usada para formatar texto. Criada por John Gruber em 2004, seu objetivo é permitir que pessoas escrevam usando uma sintaxe fácil de ler e escrever, que possa ser convertida em HTML.

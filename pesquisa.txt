@@ -1,0 +1,12 @@
+JavaScript é uma linguagem de programação essencial para 
+o desenvolvimento web, criada em 1995 por Brendan Eich. 
+Ela é usada principalmente para tornar páginas da web 
+interativas, rodando diretamente no navegador. 
+É uma linguagem interpretada, de tipagem dinâmica 
+e suporta múltiplos paradigmas como programação funcional 
+e orientada a objetos. Além disso, permite manipulação 
+do DOM, comunicação com servidores via requisições
+ assíncronas (como fetch), e é amplamente usada tanto no 
+ front-end (com frameworks como React e Vue) quanto no 
+ back-end (com Node.js). É padronizada pelo ECMAScript e
+  recebe atualizações frequentes.
