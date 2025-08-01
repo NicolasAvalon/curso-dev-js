@@ -10,3 +10,9 @@ do DOM, comunicação com servidores via requisições
  front-end (com frameworks como React e Vue) quanto no 
  back-end (com Node.js). É padronizada pelo ECMAScript e
   recebe atualizações frequentes.
+
+
+
+
+
+  NICOLAS SIAN BEREZA 
