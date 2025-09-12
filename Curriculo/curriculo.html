@@ -1,79 +1,171 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currículo - Nicolas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .contact-info p {
-            margin: 5px 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+  <title>Currículo – Nicolas</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 </head>
-<body>
-    <h1>Nicolas</h1>
+<body class="bg-light">
 
-    <div class="section contact-info">
-        <h2>Informações de Contato</h2>
-        <p><strong>E-mail:</strong> Nicolas@email.com</p>
-        <p><strong>Telefone:</strong> (18) 99999-9999</p>
-        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Nicolas" target="_blank">linkedin.com/in/Nicolas</a></p>
-    </div>
-
-    <div class="section">
-        <h2>Resumo Profissional</h2>
-        <p>Profissional com experiência diversificada em auditoria, mecânica e atendimento ao público. Atualmente cursando Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento web e automação de processos. Possui habilidades técnicas e interpessoais que contribuem para ambientes colaborativos e orientados a resultados.</p>
-    </div>
-
-    <div class="section">
-        <h2>Experiência Profissional</h2>
-        <ul>
-            <li>Auditor</li>
-            <li>Mecânico</li>
-            <li>Atendimento ao público em geral</li>
+  <!-- navegação -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">Nicolas</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Alternar navegação"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resumo">Resumo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiência</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formacao">Formação</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
         </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="section">
-        <h2>Formação Acadêmica</h2>
-        <ul>
-            <li>Curso de Análise e Desenvolvimento de Sistemas (ADS)</li>
-        </ul>
-    </div>
+  <!-- principal -->
+  <div class="container mb-5">
 
-    <div class="section">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Inglês intermediário</li>
-            <li>Conhecimento em mecânica diesel</li>
-            <li>Familiaridade com pacote office</li>
-            <li>Trabalho em equipe</li>
-            
-        </ul>
-    </div>
+    <!-- Contato -->
+    <section id="contato" class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h2 class="h4 mb-0">Informações de Contato</h2>
+        </div>
+        <div class="card-body">
+          <ul class="list-unstyled mb-0">
+            <li><strong>E-mail:</strong> <a href="mailto:Nicolas@email.com">Nicolas@email.com</a></li>
+            <li><strong>Telefone:</strong> (18) 99999-9999</li>
+            <li>
+              <strong>LinkedIn:</strong>
+              <a href="https://linkedin.com/in/Nicolas" target="_blank">
+                linkedin.com/in/Nicolas
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <div class="section">
-        <h2>Projetos</h2>
-        <ul>
-            <li>Sistema de controle de estoque desenvolvido em Python</li>
-            <li>Website institucional criado com HTML, CSS e JavaScript</li>
-        </ul>
-    </div>
+    <hr />
+
+    <!-- Resumo Profissional -->
+    <section id="resumo" class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h2 class="h4 mb-0">Resumo Profissional</h2>
+        </div>
+        <div class="card-body">
+          <p class="mb-0">
+            Profissional com experiência diversificada em auditoria, mecânica e atendimento ao público.
+            Atualmente cursando Análise e Desenvolvimento de Sistemas, com foco em desenvolvimento web
+            e automação de processos. Possui habilidades técnicas e interpessoais que contribuem para
+            ambientes colaborativos e orientados a resultados.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Experiência Profissional -->
+    <section id="experiencia" class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h2 class="h4 mb-0">Experiência Profissional</h2>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Auditor</li>
+            <li class="list-group-item">Mecânico</li>
+            <li class="list-group-item">Atendimento ao público em geral</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Formação Acadêmica -->
+    <section id="formacao" class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h2 class="h4 mb-0">Formação Acadêmica</h2>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Curso de Análise e Desenvolvimento de Sistemas (ADS)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h2 class="h4 mb-0">Habilidades</h2>
+        </div>
+        <div class="card-body">
+          <ul class="row list-unstyled mb-0">
+            <li class="col-md-6 mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i>Inglês intermediário</li>
+            <li class="col-md-6 mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i>Conhecimento em mecânica diesel</li>
+            <li class="col-md-6 mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i>Familiaridade com pacote Office</li>
+            <li class="col-md-6 mb-2"><i class="bi bi-check-circle-fill text-success me-1"></i>Trabalho em equipe</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Projetos -->
+    <section id="projetos" class="mb-5">
+      <div class="card shadow-sm">
+        <div class="card-header bg-white">
+          <h2 class="h4 mb-0">Projetos</h2>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Sistema de controle de estoque desenvolvido em Python</li>
+            <li class="list-group-item">Website institucional criado com HTML, CSS e JavaScript</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+  
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
 </body>
 </html>
