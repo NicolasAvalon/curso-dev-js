@@ -123,6 +123,59 @@
         console.log(x <= z);
 
 
+        // OPERADORES LÓGICOS
+        // || && !
+        const temIdade = true; 
+        const temCNH = false;
+        const temDinheiro = false;
+        const temCarro = true;
+
+        console.log(temIdade || temCNH || temCarro || temDinheiro);
+
+        console.log(!temIdade)
+
+        // CONVERSÕES DE TIPO
+
+        // implícitas
+        console.log("5"+5);
+        console.log(5+"5");
+        console.log("5"-5);
+        console.log("5"*5);
+
+        // explícitas
+        // String para number
+        const textoNumero = "42.7";
+        console.log(parseFloat
+        (textoNumero));
+        console.log(parseInt
+        (textoNumero));
+        console.log(parseFloat("42px"));
+        console.log(Number("42px"));
+
+        // number para string
+        const numerotexto = 123.50;
+        console.log(String(textoNumero));
+        console.log(textoNumero.toString());
+        console.log(""+textoNumero);
+
+        // Number/String para Bool
+        console.log(Boolean(1));
+        console.log(Boolean(0));
+        console.log(Boolean(""));
+        console.log(Boolean("Lucas"));
+
+        // VERIFICAÇÃO DE TIPO 
+
+        const numeroPositivo = 10;
+        const nomeCompleto = "Lucas Torquato";
+        console.log(typeof
+            numeroPositivo
+        );
+        console.log(typeof
+            nomeCompleto
+        );
+
+
 
     </script>
     
