@@ -111,9 +111,10 @@
         const btnMudarCor = document.querySelector("#btn-mudar-cor");
         const inputCor = document.querySelector("cor-fundo");
 
-        btnMudarCor.addEventListener('click',function(){
+        btnMudarCor.addEventListener('click', function(){
             document.body.style.backgroundColor = inputCor.value;
-        })
+            document.body.removeAttribute('class');
+        });
 
     
     </script>
