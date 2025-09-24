@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Aperte F12 para ver as respostas!</p>
+
+    <script>
+
+        // IF, ELSE, ELSE IF, SWITCH
+
+        const idade = 18;
+
+        // IF (CONDICAO) { }
+        if(idade >=18){
+            console.log("Maior de idade!");
+        } else {
+            console.log("Menor de idade!");
+        }
+
+        nota = 80;
+
+        if(nota >=0 && nota <=100){
+            if(nota >=90){
+                ("Ótimo");
+            } else if(nota >=60 && nota <90){
+                console.log("Bom!");
+            }else if (nota >=30 && nota < 60){
+                console.log("Precisa melhorar!");
+            }else{
+                console.log("Reprovado");
+            }
+
+        }else{
+            console.log("nota inválida");
+        }
+        // Condição? verdadeiro : falso
+        console.log( idade>=18 ? "maior de idade" : "menor de idade");
+
+        console.log(nota >=0 && nota <=100 ?(nota >= 90 ? "ótimo" : nota >=60 && nota< 90 ? "bom" : nota>= 30 && nota < 60 ? "precisa melhorar" : "reprovado"):"nota invalida");
+
+        const nome = "";
+
+        if (nome){
+            console.log(nome);
+        }else{
+            console.log("nome não digitado");
+        }
+
+
+        // 1 - domingo ... 7 - sábado
+        const dia = 2;
+        switch(dia){
+            case 1:
+                case 7:
+                console.log("final de semana");
+                break;
+                case 2:
+                case 3:
+                case 4:
+                case 5: 
+                case 6: 
+                console.log("semana");
+                break;
+                default: 
+                console.log("dia inválido");
+             
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
