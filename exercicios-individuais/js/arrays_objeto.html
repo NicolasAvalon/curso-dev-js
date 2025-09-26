@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+// ARRAYS E OBJETO
+
+
+// ARRAYS
+
+        const frutas =
+        ["maçã","banana","uva","laranja","pera"];
+        console.log(frutas);
+
+        // TAMANHO DO ARRAY
+        console.log(frutas.length)
+
+        // ACESSO A INFORMAÇÕES
+
+        console.log(frutas
+            [0]
+        );
+        console.log(frutas
+            [4]
+        );
+        console.log(frutas[frutas.length - 1]);
+        
+        // ADICIONAR ITEM
+        frutas.push("Abacaxi");
+
+        frutas.unshift
+        ("pessego");
+        console.log(frutas);
+
+        // ALTERAÇÃO DE ITEM 
+
+        frutas[4] = "jaca"; console.log (frutas);
+
+        // exclusão
+
+        frutas.pop();
+        console.log(frutas)
+
+        frutas.shift();
+        console.log(frutas);
+
+        frutas.slice(1,1,"limão");
+        console.log
+        (frutas);
+
+        delete frutas [1];
+        console.log
+        (frutas);
+
+        // exibição
+
+        console.log(frutas.slice(2));
+        console.log(frutas.slice(2, 5));
+
+
+
+        // OBJETOS
+
+        const pessoa = {
+            nome : "Lucas",
+            idade : 30,
+            altura : 1.80,
+            amigos : ["pedro", "joao"]
+
+        }
+
+        console.log(pessoa.nome);
+        console.log(pessoa["amigos"][0]);
+
+        // Inserir
+
+        pessoa.cidade= "presidente prudente";
+        console.log (pessoa);
+
+        pessoa.cidade = "regente";
+        console.log(pessoa);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
