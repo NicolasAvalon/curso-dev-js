@@ -53,73 +53,58 @@
             </div>
         </div>
 
-        <script>
-
-
-        const iptNome = document.queryselector 
-        ("#nome");
-        const iptidade= document.queryselector
-        ("#idade");
-        const iptcurso = document.queryselector("curso");
-        ("#curso");
-
-        const nome = [];
-
-        const idade = [];
-
-        const curso = [];
-
-        function cadastrarAluno(){
-            const nome = iptNome.value.trim();
-            const idade = Number(iptIdade.value.trim());
-            const curso = iptcurso.value.trim();
-
-            if (nome && idade && curso){
-                alunos.push({nome, idade, curso});
-                alert("aluno cadastrado com sucesso");
-                cancelarCadastro();
-
-            }else {
-                alert("preencha todos os campos!");
-            }
-
-            btnsalvar.addeventListener (`click`,cadastrarAluno);
-            btncancelar.addeventListener(`click`,cancelarCadastro);
-
-        }
-
-
-            let idAtual = 0;
-
-            const nome = document.querySelector
-            ("aluno-nome");
-            const idade = document.querySelector
-            ("aluno-");
-            const nome = document.querySelector
-            ("aluno-nome");
-            function exibirAluno (){
-                if (alunos.lenght > 0){
-                    nome.texContent = alunos[idAtual].
-                    nome;
-                    idade.texContent = alunos[idAtual].
-                    idade;
-                    curso.texContent = alunos[idAtual].
-                    curso;
-
-
-                }
-            }
-
-
-
-
-
-    </script>
-
 
     </div>
 
     <script>
+
+        const iptNome = document.querySelector("#nome");
+        const iptIdade = document.querySelector("#idade");
+        const iptCurso = document.querySelector("#curso");
+
+        const btnSalvar = document.querySelector("#btn-salvar");
+        const btnCancelar = document.querySelector("#btn-cancelar");
+
+        const alunos = [];
+
+        function cadastrarAluno(){
+            const nome = iptNome.value.trim();
+            const idade = Number(iptIdade.value.trim());
+            const curso = iptCurso.value.trim();
+
+            if (nome && idade && curso){
+                alunos.push({nome, idade, curso});
+                alert("Aluno cadastrado com sucesso!");
+                cancelarCadastro();
+            }else{
+                alert("Preencha todos os campos!");
+            }
+
+        }
+
+        function cancelarCadastro(){
+            iptNome.value = "";
+            iptIdade.value = "";
+            iptCurso.value = "";
+        }
+
+        btnSalvar.addEventListener('click',cadastrarAluno);
+        btnCancelar.addEventListener('click', cancelarCadastro);
+
+        let idAtual = 0;
+
+        const nome = document.querySelector("#aluno-nome");
+        const idade = document.querySelector("#aluno-idade");
+        const curso = document.querySelector("#aluno-curso");
+
+        function exibirAluno(){
+            if (alunos.length > 0){
+                nome.textContent = alunos[idAtual].nome;
+                idade.textContent = alunos[idAtual].idade;
+                curso.textContent = alunos[idAtual].curso;
+            }
+        }
+
 
     </script>
 </body>
