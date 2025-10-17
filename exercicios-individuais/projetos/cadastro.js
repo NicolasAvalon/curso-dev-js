@@ -1,65 +1,69 @@
-const usuarios = JSON.parse(localStorage.getItem("cadastro_usuarios")) || [];
+let usuarios = JSON.parse(localStorage.getItem("cadastro_usuarios")) || [];
 
-// Elementos
-const telaLista = document.querySelector
-("#tela-lista");
-const telaCadastro = document.querySelector
-("#tela-cadastro");
-const btnAdicionar = document.querySelector
-("#btn-adicionar");
-const btnVoltar = document.querySelector
-("#btn-voltar-lista");
+//Elementos
+const telaLista = document.querySelector("#tela-lista");
+const telaCadastro = document.querySelector("#tela-cadastro");
+const btnAdicionar = document.querySelector("#btn-adicionar");
+const btnVoltar = document.querySelector("#btn-voltar-lista");
 
-// inputs usuario
-const inputId = document.querySelector
-("#user-id")
-const inputNome = document.querySelector
-("#user-nome");
-const inputSobreNome = document.querySelector
-("#user-sobrenome");
-const inputEmail = document.querySelector
-("#user-Email");
-const inputCep = document.querySelector
-("#user-Cep");
-const inputRua = document.querySelector
-("#user-rua");
-const inputNumero = document.querySelector
-("#user-numero");
-const inputComplemento = document.querySelector
-("#user-Complemento");
-const inputBairro = document.querySelector
-("#user-bairro");
-const inputCidade = document.querySelector
-("#user-Cidade");
-const inputEstado = document.querySelector
-("#user-estado");
-const inputObs = document.querySelector
-("#user-obs")
+//Inputs Usuário
+const inputId = document.querySelector("#user-id");
+const inputNome = document.querySelector("#user-nome");
+const inputSobrenome = document.querySelector("#user-sobrenome");
+const inputEmail = document.querySelector("#user-email");
+const inputCep = document.querySelector("#user-cep");
+const inputRua = document.querySelector("#user-rua");
+const inputNumero = document.querySelector("#user-numero");
+const inputComplemento = document.querySelector("#user-complemento");
+const inputBairro = document.querySelector("#user-bairro");
+const inputCidade = document.querySelector("#user-cidade");
+const inputEstado = document.querySelector("#user-estado");
+const inputObs = document.querySelector("#user-obs");
 
 const form = document.querySelector("#user-form");
-const tabela = document.querySelector("#user-table-body");
+const tabelaCorpo = document.querySelector("#user-table-body");
 
-// Funções
-function mostrarTelaLista (){
+let idEmEdicao = null;
+
+const formTitulo = document.querySelector("#form-titulo");
+const btnBuscarCep = document.querySelector("#btn-buscar-cep");
+
+const inputBusca = document.querySelector("#user-busca");
+
+const btnDownloadJson = document.querySelector("#Btn-download-json");
+const btnUploadJson = document.querySelector("#Btn-upload-json");
+const btnInputJson = document.querySelector("#btn-input-json");
+
+
+
+
+
+
+//Funções
+function mostrarTelaLista(){
     telaLista.classList.remove("d-none");
     telaCadastro.classList.add("d-none");
+    renderizarTabela();
+    form.reset();
 }
 
-function mostrarTelaCadastro (){
+function mostrarTelaCadastro(editar = false){
     telaLista.classList.add("d-none");
     telaCadastro.classList.remove("d-none");
-    renderizarTabela();
+    console.log(editar);
+    formTitulo.textContent = editar === true ? "Editar Usuário" : "Adicionar Novo Usuário";
 }
 
 function salvarUsuario(){
+
     const id = Number(inputId.value);
     const nome = inputNome.value;
-    const sobrenome = inputSobreNome.value;
+    const sobrenome = inputSobrenome.value;
     const email = inputEmail.value;
-    const Cep = inputCep.value;
+    const cep = inputCep.value
     const rua = inputRua.value;
     const numero = inputNumero.value;
-    const Complemento = inputComplemento.value;
+    const complemento = inputComplemento.value;
     const bairro = inputBairro.value;
     const cidade = inputCidade.value;
     const estado = inputEstado.value;
@@ -67,62 +71,208 @@ function salvarUsuario(){
 
     const usuario = {
         id: id || Date.now(),
-        nome, sobrenome, email, Cep, rua, numero, Complemento, bairro, cidade, estado, obs
+        nome, sobrenome, email, cep, rua, numero,
+        complemento, bairro, cidade, estado, obs
     }
 
-    usuarios.push(usuario);
-    salvarNoStorage();
+    if (idEmEdicao){
+        const index = usuarios.findIndex(user => user.id === idEmEdicao); // se localiza, retorna a posição, caso contrário retorna -1
+        if (index !== -1){
+            usuarios[index] = usuario;
+        }
+    } else{
+        usuarios.push(usuario);
+    }    
+
+    salvarNoStorage();    
+    mostrarTelaLista();
+    idEmEdicao = null;
+    form.reset();
 }
 
-    function salvarNoStorage (){
-        localStorage.setItem("Cadastro_usuarios", JSON.stringify(usuarios));
+function salvarNoStorage(){
+    localStorage.setItem("cadastro_usuarios",JSON.stringify(usuarios));
+}
+
+function editarUsuario(id){
+
+    const user = usuarios.find(user => user.id === id);
+    if (!user) return;
+
+    idEmEdicao = id; //user.id
+
+    console.log(user);
+
+    inputId.value = user.id;
+    inputNome.value = user.nome;
+    inputSobrenome.value = user.sobrenome;
+    inputEmail.value = user.email;
+    inputCep.value = user.cep;
+    inputRua.value = user.rua;
+    inputNumero.value = user.numero;
+    inputComplemento.value = user.complemento;
+    inputBairro.value = user.bairro;
+    inputCidade.value = user.cidade;
+    inputEstado.value = user.estado;
+    inputObs.value = user.obs;
+
+    mostrarTelaCadastro(true);
+
+}
+
+function excluirUsuario(id){
+    if(confirm("Você tem certeza que deseja excluir esse usuário???")){
+        //console.log(id);
+        usuarios = usuarios.filter(user => user.id !== id);
+        salvarNoStorage();
+        renderizarTabela();
     }
+}
 
-    function editarUsario(){
-
-    }
-
-    function excluirUsuario(){
-
-    }
-
-
-    function renderizarTabela(){
-        tabelaCorpo.innerHTML = "";
-        usuarios.forEach(user => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
+function renderizarTabela(){
+    tabelaCorpo.innerHTML = "";
+    usuarios.forEach(user => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
             <td>${user.nome}</td>
             <td>${user.sobrenome}</td>
             <td>${user.email}</td>
             <td>
-            <button class="btn btn-warning" data-id="${user.id}">Editar</button>
-            <button class="btn btn-danger" data-id="${user.id}">Excluir</button>
+                <button class="btn btn-sm btn-warning" data-id="${user.id}">Editar</button>
+                <button class="btn btn-sm btn-danger" data-id="${user.id}">Excluir</button>
             </td>
+        `;
+        tabelaCorpo.appendChild(tr);
+    });
+}
 
-            `;
-            tabelaCorpo.appendChild(tr);
-        });
-        
+async function buscarCEP(){
+    const cep = inputCep.value.replace(/\D/g,"");
+
+    if (cep.length === 8){
+
+        try{
+
+            const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+
+            const dados = await resposta.json();
+
+            if (!dados.erro){
+                // console.log(dados);
+                inputRua.value = dados.logradouro;
+                inputBairro.value = dados.bairro;
+                inputCidade.value = dados.localidade;
+                inputEstado.value = dados.estado;
+            }else{
+                alert("CEP Inválido! Tente novamente!");
+            }
+
+        } catch (error){
+            alert("Erro ao buscar CEP, verique o número tente novamente!");
+            console.log(error);
+        }
+
+
+
+    }else{
+        alert("CEP Inválido! Por favor, digite um CEP com 8 digitos");
+    }
+}
+
+function buscarUsuario(){
+    //lowercase => deixa tudo minusculo
+    //trim => remove os espaços das extremos;
+    const textoBusca = inputBusca.value.toLowerCase().trim();
+
+    if (textoBusca.length === 0){
+        renderizarTabela();
+        return;
+    }
+
+    const usuariosFiltrados = usuarios.filter(user =>{
+        return user.nome.toLowerCase().trim().includes(textoBusca) || user.sobrenome.toLowerCase().trim().includes(textoBusca) || user.email.toLowerCase().trim().includes(textoBusca);
+    });
+
+    renderizarTabela(usuariosFiltrados);
+
+}
+function baixarJson(){
+    const dados = JSON.stringify(usuarios);
+    const blob = new blob([dados],{type : "application/json"});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "usuarios.json";
+    link.click();
+    URL.revokeObjectURL(url);
+}
+    function uploadjson(event){
+        const arquivo = event.target.files[0];
+
+        if(!arquivo) return;
+
+        const leitor = new FileReader();
+
+        leitor.onload = function(e){
+            const conteudoArquivo = e.target.result;
+
+            const usuariosImportados = JSON.parse(conteudoArquivo);
+            if (!Array.isArray(usuariosImportados)){
+                alert("O arquivo não possui um array valido");
+            }
+            if (confirm("Deseja substituir todos os dados de usuarios pelos do arquivo")){
+                usuarios = usuariosImportados;
+                salvarNoStorage();
+                renderizarTabela();
+                alert("Usuarios importados!");
+            }
+        }
+
+        leitor.readAsText(arquivo);
 
     }
 
-function salvarUsuario(){}
 
-function Inicializacao(){
-    btnAdicionar.addEventListener("click",
-        mostrarTelaCadastro
-    );
-    btnVoltar.addEventListener("click",
-        mostrarTelaLista
- 
-    );
+    function btnUploadJson(){
+
+    }
+
+function inicializacao(){
+    btnAdicionar.addEventListener("click",mostrarTelaCadastro);
+    btnVoltar.addEventListener("click",mostrarTelaLista);
+    //buscar cep
+    btnBuscarCep.addEventListener("click",buscarCEP);
 
     form.addEventListener("submit",salvarUsuario);
-    mostrarTelaLista();
 
+    inputBusca.addEventListener("input", buscarUsuario);
+
+    tabelaCorpo.addEventListener("click", (event) =>{
+        const target = event.target.closest("button");
+        //console.log(target);
+        if (!target) return; // se existe um botão
+
+        const id = Number(target.dataset.id);
+
+        if (isNaN(id)) return; //se o id é numérico
+
+        if (target.classList.contains("btn-danger")){
+            excluirUsuario(id);
+        } else if(target.classList.contains("btn-warning")){
+            editarUsuario(id);
+        }
+        
+
+
+    });
+
+    btnDownloadJson.addEventListener("click",baixarJson);
+    btnUploadJson.addEventListener("click", () => UploadJsonInput.click());
+
+    upload
+
+
+    mostrarTelaLista();
 }
 
-
-Inicializacao();
-
+inicializacao();
