@@ -30,11 +30,9 @@ const btnBuscarCep = document.querySelector("#btn-buscar-cep");
 
 const inputBusca = document.querySelector("#user-busca");
 
-const btnDownloadJson = document.querySelector("#Btn-download-json");
-const btnUploadJson = document.querySelector("#Btn-upload-json");
-const btnInputJson = document.querySelector("#btn-input-json");
-
-
+const btnDownloadJson = document.querySelector("#btn-download-json");
+const btnUploadJson = document.querySelector("#btn-upload-json");
+const uploadJsonInput = document.querySelector("#upload-json-input");
 
 
 
@@ -129,9 +127,9 @@ function excluirUsuario(id){
     }
 }
 
-function renderizarTabela(){
+function renderizarTabela(usuariosParaRenderizar = usuarios){
     tabelaCorpo.innerHTML = "";
-    usuarios.forEach(user => {
+    usuariosParaRenderizar.forEach(user => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${user.nome}</td>
@@ -171,9 +169,6 @@ async function buscarCEP(){
             alert("Erro ao buscar CEP, verique o número tente novamente!");
             console.log(error);
         }
-
-
-
     }else{
         alert("CEP Inválido! Por favor, digite um CEP com 8 digitos");
     }
@@ -194,11 +189,11 @@ function buscarUsuario(){
     });
 
     renderizarTabela(usuariosFiltrados);
-
 }
+
 function baixarJson(){
     const dados = JSON.stringify(usuarios);
-    const blob = new blob([dados],{type : "application/json"});
+    const blob = new Blob([dados], {type : "application/json"});
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
@@ -206,36 +201,33 @@ function baixarJson(){
     link.click();
     URL.revokeObjectURL(url);
 }
-    function uploadjson(event){
-        const arquivo = event.target.files[0];
 
-        if(!arquivo) return;
+function uploadJson(event){
+    const arquivo = event.target.files[0];
 
-        const leitor = new FileReader();
+    if (!arquivo) return;
 
-        leitor.onload = function(e){
-            const conteudoArquivo = e.target.result;
+    const leitor = new FileReader();
 
-            const usuariosImportados = JSON.parse(conteudoArquivo);
-            if (!Array.isArray(usuariosImportados)){
-                alert("O arquivo não possui um array valido");
-            }
-            if (confirm("Deseja substituir todos os dados de usuarios pelos do arquivo")){
-                usuarios = usuariosImportados;
-                salvarNoStorage();
-                renderizarTabela();
-                alert("Usuarios importados!");
-            }
+    leitor.onload = function(e){
+        const conteudoArquivo = e.target.result;
+
+        const usuariosImportados = JSON.parse(conteudoArquivo);
+
+        if (!Array.isArray(usuariosImportados)){
+            alert("O arquivo não possui um array válido!");
         }
 
-        leitor.readAsText(arquivo);
-
+        if (confirm("Deseja substituir todos os dados de usuários pelo do arquivo?")){
+            usuarios = usuariosImportados;
+            salvarNoStorage();
+            renderizarTabela();
+            alert("Usuários importados com sucesso!");
+        }
     }
 
-
-    function btnUploadJson(){
-
-    }
+    leitor.readAsText(arquivo);
+}
 
 function inicializacao(){
     btnAdicionar.addEventListener("click",mostrarTelaCadastro);
@@ -261,16 +253,13 @@ function inicializacao(){
         } else if(target.classList.contains("btn-warning")){
             editarUsuario(id);
         }
-        
-
-
     });
 
-    btnDownloadJson.addEventListener("click",baixarJson);
-    btnUploadJson.addEventListener("click", () => UploadJsonInput.click());
+    btnDownloadJson.addEventListener("click", baixarJson);
 
-    upload
+    btnUploadJson.addEventListener("click", () => uploadJsonInput.click());
 
+    uploadJsonInput.addEventListener("change", uploadJson);
 
     mostrarTelaLista();
 }
